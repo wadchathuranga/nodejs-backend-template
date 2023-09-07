@@ -1,0 +1,38 @@
+# compiled output
+/node_modules
+
+# environment files
+.env
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+
+# Tests
+
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
+# sensitive config
+docker-compose.yaml
+development-config.yaml
+
+.vscode/
