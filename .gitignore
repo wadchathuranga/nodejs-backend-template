@@ -1,9 +1,6 @@
 # compiled output
 /node_modules
 
-# environment files
-.env
-
 # Logs
 logs
 *.log
@@ -24,6 +21,7 @@ logs
 *.sublime-workspace
 
 # IDE - VSCode
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -33,6 +31,9 @@ logs
 
 # sensitive config
 docker-compose.yaml
-development-config.yaml
 
-.vscode/
+# dotenv environment variables file
+.env
+config/env/production.json
+config/env/development.json
+config/env/test.json

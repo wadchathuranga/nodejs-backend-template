@@ -1,0 +1,35 @@
+# Main Config
+PORT = 4444
+HOST = localhost
+NODE_ENV = development
+
+# Application Config
+APP_NAME = NodeJs Backend Service Template
+APP_KEY = NBST
+APP_URL = localhost:4444
+# APP_ENV = development
+APP_VERSION = 1.0
+
+CLIENT_APP_URL = http://localhost:3000
+
+# if have more than one version, add like this, API_VERSION = V1 V2 V3 
+API_VERSIONS = V1
+
+# Database Connection ENV for MONGO DB
+MONGO_DB_NAME_V1 = nodejs_backend_temp
+# MONGO_DB_NAME_V2 = db_name_v2
+# <DB_NAME> Replace by code base itself, no need change here, keep it as it is.
+MONGO_DB_URI = mongodb://localhost:27017/<MONGO_DB_NAME>
+
+# Database Connection ENV for MYSQL DB
+# MYSQL_DB_HOST = localhost
+# MYSQL_DB_PORT = 3306
+# MYSQL_DB_USER = root
+# MYSQL_DB_PASSWORD = Password123#@!
+# MYSQL_DB_NAME_V1 = authorization_v1
+# MYSQL_DB_NAME_V2 = authorization
+# MYSQL_DB_NAME_V3 = authentication_v3
+
+ENV_FILE_PATH = ./env
+
+NODE_TLS_REJECT_UNAUTHORIZED = 0
