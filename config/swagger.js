@@ -25,7 +25,10 @@ const SWAGGER = {
   }),
 
   APIS: {
-    V1: ['authentication', 'crud'],
+    V1: [
+      'authentication',
+      'employee',
+    ],
     // V2: ['module-01-name', 'module-02-name]
   }
 };

@@ -56,6 +56,10 @@ const APPLICATION = {
   APP_URL: process.env.APP_URL,
   APP_VERSION: process.env.APP_VERSION,
 
+  JWT_SECRET_STR: process.env.JWT_SECRET_STR,
+  JWT_EXPIRE: process.env.JWT_EXPIRE,
+  JWT_COOKIES_EXPIRE: process.env.JWT_COOKIES_EXPIRE,
+
   API_VERSIONS: API_VERSIONS,
 
   ENV_FILE_PATH: process.env.ENV_FILE_PATH,

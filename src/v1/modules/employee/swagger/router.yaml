@@ -1,0 +1,334 @@
+paths:
+  /employees:
+    get: # GET ALL EMPLOYEES
+      tags:
+        - Employees
+      name: Employees Details
+      summary: Get all employee details
+      # operationId: getEmployees
+      produces:
+        - application/json
+      responses:
+        200:
+          description: A list of employees
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 200
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Employee"
+              success:
+                type: "boolean"
+                example: true
+        400:
+          description: Band Request
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 400
+              message:
+                type: string
+                example: BAD_REQUEST
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: string
+                  code:
+                    type: integer
+                    example: 400
+              success:
+                type: "boolean"
+                example: false
+        404:
+          description: Not Found
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 404
+              message:
+                type: string
+                example: NOT_FOUND
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: Route /v1/employees || Employees not found
+                  code:
+                    type: integer
+                    example: 404
+              success:
+                type: "boolean"
+                example: false
+        500:
+          description: Internal Server Error
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: INTERNAL_SERVER_ERROR
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: string
+                  code:
+                    type: integer
+                    example: 500
+              success:
+                type: "boolean"
+                example: false
+    post: # CREATE A EMPLOYEE
+      tags:
+        - Employees
+      name: Create a new employeee
+      summary: Create a new employee
+      # operationId: createEmployees
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              employeeId:
+                type: string
+                example: "EMPXXX"
+              employeeName:
+                type: string
+                example: "Test Name"
+              position:
+                type: string
+                example: "ASE"
+      responses:
+        201:
+          description: Created Successfull
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 201
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Employee"
+              success:
+                type: "boolean"
+                example: true
+        400:
+          description: Band Request
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 400
+              message:
+                type: string
+                example: BAD_REQUEST
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: string
+                  code:
+                    type: integer
+                    example: 400
+                  ---:
+                    type: ---
+                    example: ---
+              success:
+                type: "boolean"
+                example: false
+        404:
+          description: Not Found
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 404
+              message:
+                type: string
+                example: NOT_FOUND
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: Route /v1/employees || Employees not found
+                  code:
+                    type: integer
+                    example: 404
+              success:
+                type: "boolean"
+                example: false
+        500:
+          description: Internal Server Error
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: INTERNAL_SERVER_ERROR
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: string
+                  code:
+                    type: integer
+                    example: 500
+              success:
+                type: "boolean"
+                example: false
+  /employees/{employeeId}:
+    get: # GET EMPLOYEE BY EMPLOYEE ID
+      tags:
+        - Employees
+      name: Get employeee by employeeId
+      summary: Get employeee by employeeId.
+      # operationId: getEmployeeByEmployeeId
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: employeeId
+          description: Get employeee by employeeId
+          required: true
+          type: string
+      responses:
+        200:
+          description: Get a employee
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 200
+              data:
+                $ref: "#/definitions/Employee"
+              success:
+                type: "boolean"
+                example: true
+        400:
+          description: Band Request
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 400
+              message:
+                type: string
+                example: BAD_REQUEST
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: string
+                  code:
+                    type: integer
+                    example: 400
+              success:
+                type: "boolean"
+                example: false
+        404:
+          description: Not Found
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 404
+              message:
+                type: string
+                example: NOT_FOUND
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: Route /v1/employees/employeeId || Employee not found.
+                  code:
+                    type: integer
+                    example: 404
+              success:
+                type: "boolean"
+                example: false
+        500:
+          description: Internal Server Error
+          schema:
+            type: "object"
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: INTERNAL_SERVER_ERROR
+              error:
+                type: object
+                properties:
+                  errmsg:
+                    type: string
+                    example: string
+                  code:
+                    type: integer
+                    example: 500
+              success:
+                type: "boolean"
+                example: false
+definitions:
+  Employee:
+    type: object
+    properties:
+      _id:
+        type: string
+        example: "64ffc83121dd659cd6636c42"
+      employeeId:
+        type: string
+        example: "EMPXXX"
+      employeeName:
+        type: string
+        example: "Test Name"
+      position:
+        type: string
+        example: "ASE"
+      createdAt:
+        type: string
+        format: date-time
+        example: "2023-09-12T02:08:49.348Z"
+      updatedAt:
+        type: string
+        format: date-time
+        example: "2023-09-12T02:08:49.348Z"
+      __v:
+        type: integer
+        example: 0
